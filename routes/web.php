@@ -19,6 +19,9 @@
 // get 表明这个路由将会响应 GET 请求，并将请求映射到指定的控制器动作上。
 // 比方说，我们向 http://sample.test/ 发出了一个请求，
 // 则该请求将会由 StaticPagesController 的 home 方法进行处理
-Route::get('/', 'StaticPagesController@home');
-Route::get('/help', 'StaticPagesController@help');
-Route::get('/about', 'StaticPagesController@about');
+Route::get('/', 'StaticPagesController@home')->name('home');
+Route::get('/help', 'StaticPagesController@help')->name('help');
+Route::get('/about', 'StaticPagesController@about')->name('about');
+
+// Route::get('/signup', 'UsersController@create')->name('signup');
+Route::get('signup', 'UsersController@create')->name('signup');
